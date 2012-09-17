@@ -1,0 +1,26 @@
+<script src="lib/jquery-1.4.3.min.js"></script>
+<script src="lib/jit-yc.js"></script>
+<script src="helpers.js"></script>
+<script src="chromeCrawlBG.js"></script>
+<script>
+    var newTabs = []; //array for new tab urls
+alert("Lets get this party started");
+    console.log('Timer Started');
+    var newTabTimer = setInterval(function(){console.log("Timer Fired");loadNewTab();},6*1000); //set for 5 minutes
+
+    function loadNewTab(){
+        //grabs new url from list
+        var newUrlToLoad = newTabs.pop();
+        //if URL(s)
+        if (newUrlToLoad.match(/inventory/)){
+            newUrlToLoad = "http://www.lotvantage.com/"+newUrlToLoad;
+            //open in new tab
+            console.log("Launching new Tab "+newUrlToLoad);
+            chrome.tabs.create({url:newUrlToLoad});
+            //alert(newUrlToLoad);
+        }else{
+            //alert("no url");
+            console.log("No URL Was Found in List");
+        }
+    }
+</script>

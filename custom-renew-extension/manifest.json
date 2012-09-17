@@ -1,0 +1,17 @@
+{
+   "browser_action": 
+   {
+      "default_icon": "images/ChronologicalReview.png",
+      "popup": "popup.html"
+   },
+   "background_page": "background.html",
+   "description": "Custom Renew Feature Extension",
+   "icons": {
+      "48": "images/ChronologicalReview.png"
+   },
+  
+   "name": "Custom Renew Feature Extension",
+   "options_page": "options.html",
+   "permissions": [ "tabs", "http://*/*", "https://*/*" ],   
+   "version": "0.8"
+}
